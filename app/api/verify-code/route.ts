@@ -1,6 +1,6 @@
 import { ApiResponse } from "@/helper/ApiResponse";
 import { asyncHandler } from "@/helper/asyncHandler";
-import dbConnect from "@/db/dbConnect";
+import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 
 export const POST = asyncHandler(async (req: Request) => {

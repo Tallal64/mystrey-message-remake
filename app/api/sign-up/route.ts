@@ -1,7 +1,7 @@
 import { ApiResponse } from "@/helper/ApiResponse";
 import { asyncHandler } from "@/helper/asyncHandler";
 import { SendEmailVerification } from "@/helper/sendEmailVerification";
-import dbConnect from "@/db/dbConnect";
+import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import bcrypt from "bcrypt";
 

@@ -29,7 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "db/db.ts"
   ],
   "exclude": ["node_modules"]
 }

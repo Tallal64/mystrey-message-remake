@@ -23,8 +23,6 @@ export async function SendEmailVerification({
       react: EmailTemplate({ username, OTP }),
     });
 
-    console.log("data of sendEmailVerification : ", data); // TODO: remove
-
     if (error) {
       return { success: false, message: "Failed to send verification email" };
     }
