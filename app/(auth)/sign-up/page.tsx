@@ -40,12 +40,11 @@ export default function SignUpForm() {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof signUpSchema>) => {
+  const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     const makeSignUpRequest = async () => {
       try {
-        const response = await axios.post<ApiPromise>("/api/sign-up", values);
-        router.replace("/dashboard");
-
+        const response = await axios.post<ApiPromise>("/api/sign-up", data);
+        router.replace(`/verify/${data.username}`);
         return response.data;
       } catch (error) {
         const axiosError = error as AxiosError<ApiPromise>;

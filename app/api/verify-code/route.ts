@@ -16,6 +16,7 @@ export const POST = asyncHandler(async (req: Request) => {
   if (!user) {
     return ApiResponse(false, "User not found", 404);
   }
+
   const isCodeValid = user.verifyCode === code;
   const isCodeNotExpired = new Date(user.verifyCodeExpiry) > new Date();
 

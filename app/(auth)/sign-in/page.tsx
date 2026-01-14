@@ -26,6 +26,7 @@ import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import z from "zod";
+import Link from "next/link";
 
 export default function SignIpForm() {
   const router = useRouter();
@@ -124,7 +125,7 @@ export default function SignIpForm() {
             </FieldGroup>
           </form>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex flex-col gap-y-2">
           <Button
             className="w-full"
             variant="outline"
@@ -134,6 +135,13 @@ export default function SignIpForm() {
           >
             {form.formState.isSubmitting ? "Signing in..." : "Sign In"}
           </Button>
+
+          <p className="text-center text-sm">
+            Didn't have an account?
+            <Button variant="link">
+              <Link href="/sign-up">Sign Up</Link>
+            </Button>
+          </p>
         </CardFooter>
       </Card>
     </div>
